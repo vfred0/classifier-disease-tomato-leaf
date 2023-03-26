@@ -19,8 +19,12 @@ $ flutter build apk
 ```
 
 ## Screenshots
-![](https://iili.io/HNcsbNj.png)
-![](https://i.ibb.co/4JsnCrs/upload.jpg)
+|  |  |
+| --------- | --------- |
+| ![](https://i.ibb.co/YXf79ys/upload.jpg) | ![](https://i.ibb.co/4JsnCrs/upload.jpg) |
+
+
+
 
 
 
