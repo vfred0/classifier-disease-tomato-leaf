@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_tflite/flutter_tflite.dart';
-import 'package:tomato_leaf_classifier/models/disease_tomato_leaf.dart';
+import 'package:classifier_disease_tomato_leaf/models/disease_tomato_leaf.dart';
 
 class ClassifierDiseaseTomatoLeaf {
   Future<DiseaseTomatoLeaf> getPrediction(File image) async {

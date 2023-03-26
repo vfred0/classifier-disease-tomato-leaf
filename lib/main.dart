@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tomato_leaf_classifier/models/disease_tomato_leaf.dart';
-import 'package:tomato_leaf_classifier/widgets/button.dart';
-import 'package:tomato_leaf_classifier/widgets/show_prediction.dart';
+import 'package:classifier_disease_tomato_leaf/models/disease_tomato_leaf.dart';
+import 'package:classifier_disease_tomato_leaf/widgets/button.dart';
+import 'package:classifier_disease_tomato_leaf/widgets/show_prediction.dart';
 
 import 'classifier_disease_tomato_leaf.dart';
 
@@ -28,7 +28,7 @@ class _HomeClassifierDiseaseLeafState extends State<HomeClassifierDiseaseLeaf> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Sistema clasificador de hojas de tomate'),
+          title: const Text('Enfermedades hojas de tomate'),
           backgroundColor: Colors.green,
         ),
         body: Column(
