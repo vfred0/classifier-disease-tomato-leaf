@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:classifier_disease_tomato_leaf/pages/neural_network_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +10,12 @@ import 'package:classifier_disease_tomato_leaf/widgets/show_prediction.dart';
 
 import 'classifier_disease_tomato_leaf.dart';
 
-void main() => runApp(const HomeClassifierDiseaseLeaf());
+void main() {
+  runApp(const MaterialApp(
+    home: HomeClassifierDiseaseLeaf(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
 
 class HomeClassifierDiseaseLeaf extends StatefulWidget {
   const HomeClassifierDiseaseLeaf({super.key});
@@ -25,36 +31,36 @@ class _HomeClassifierDiseaseLeafState extends State<HomeClassifierDiseaseLeaf> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Enfermedades hojas de tomate'),
-          backgroundColor: Colors.green,
-        ),
-        body: Column(
-          children: [
-            const Gap(12),
-            setImage(),
-            const Gap(12),
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: [
-                Button(
-                  'Cargar imagen de la galeria',
-                  Icons.image_search_outlined,
-                  () => loadImageAndSetPrediction(ImageSource.gallery),
-                ),
-                const SizedBox(height: 12),
-                Button('Usar la cámara', Icons.camera_alt,
-                    () => loadImageAndSetPrediction(ImageSource.camera)),
-              ],
-            ),
-            const Gap(12),
-            ShowPrediction(_diseaseTomatoLeaf),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Enfermedades hojas de tomate'),
+        backgroundColor: Colors.green,
       ),
-      debugShowCheckedModeBanner: false,
+      body: Column(
+        children: [
+          const Gap(12),
+          setImage(),
+          const Gap(12),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: [
+              Button(
+                'Cargar imagen de la galeria',
+                Icons.image_search_outlined,
+                () => loadImageAndSetPrediction(ImageSource.gallery),
+              ),
+              const SizedBox(height: 12),
+              Button('Usar la cámara', Icons.camera_alt,
+                  () => loadImageAndSetPrediction(ImageSource.camera)),              
+              const SizedBox(height: 12),
+              Button('Detalles de la red neuronal', Icons.dehaze_rounded,
+                  () => goToDetailsModal(context)),
+            ],
+          ),
+          const Gap(12),
+          ShowPrediction(_diseaseTomatoLeaf),
+        ],
+      ),
     );
   }
 
@@ -82,5 +88,12 @@ class _HomeClassifierDiseaseLeafState extends State<HomeClassifierDiseaseLeaf> {
     }
     return Image.asset('assets/images/tomato-leaf.png',
         width: 300, height: 300);
+  }
+
+  goToDetailsModal(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const NeuralNetworkDetailsPage()),
+    );
   }
 }
