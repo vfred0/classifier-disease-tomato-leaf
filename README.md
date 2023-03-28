@@ -22,13 +22,3 @@ $ flutter build apk
 |  |  |
 | --------- | --------- |
 | ![](https://i.ibb.co/YXf79ys/upload.jpg) | ![](https://i.ibb.co/4JsnCrs/upload.jpg) |
-
-
-
-
-
-
-
-
-
-
